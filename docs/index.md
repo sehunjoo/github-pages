@@ -1,46 +1,123 @@
-# ddp-batch
+---
+layout: default
+---
 
-This repository offers specialized scripts designed to facilitate the execution of **_ab initio_ random structure searching ([AIRSS](https://www.mtg.msm.cam.ac.uk/Codes/AIRSS))** package and **ephemeral data derived potential ([EDDP](https://www.mtg.msm.cam.ac.uk/Codes/EDDP))** packages. These scripts are tailored for use with batch queuing systems or job schedulers, specifically the **SLURM** (Simple Linux Utility for Resource Management) and **SGE** (Sun Grid Engine), on cluster and high-performance computing (HPC) environments. The provided scripts streamline the process of initializing, managing, and monitoring AIRSS and EDDP tasks, ensuring efficient utilization of the cluster/HPC resources.
+Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-## Installation
-install the package with:
+[Link to another page](./another-page.html).
 
-`git clone git@github.com:sehunjoo/ddp-batch.git`
+There should be whitespace between paragraphs.
 
-run setup.sh script:
+There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
 
-`./setup.sh`
+# Header 1
 
-## Documentation
+This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
 
-### update-chain
+## Header 2
 
-- This script is for generating `chain-batch` script, which is a `chain` script for batch queueing system. It basically replaces `spawn` and `despawn` with `spawn-batch` and `despawn-batch`.
-- Usage
+> This is a blockquote following a header.
+>
+> When something is important enough, you do it even if the odds are not in your favor.
 
-  Generate the chain-batch with:
- 
-  `./update-chain`
+### Header 3
 
-### spawn-batch
+```js
+// Javascript code with syntax highlighting.
+var fun = function lang(l) {
+  dateformat.i18n = require('./lang/' + l)
+  return true;
+}
+```
 
-- This script can be used to submit multiple jobs to a cluster using a batch queueing system. This script is for creating a job script, submitting the job script, monitoring the job, and resubimtting/killing the job.
-- This script is applicable to all applications, but is specifically designed for use with `airss.pl` and `crud.pl` in  AIRSS package and `forge` in EDDP package.
-- It creates `jobscript-program.sh` and `despawn-batch` files in the working directory. As soon as a job is started, a `.spawnpid.*` file is created for each subjob. The file contains details of each subjob.
-- It automatically resubmits the job if the job is terminated due to the wall clock limit.
-- For example,
+```ruby
+# Ruby code with syntax highlighting
+GitHubPages::Dependencies.gems.each do |gem, version|
+  s.add_dependency(gem, "= #{version}")
+end
+```
 
-  `nohup spawn-batch -command airss.pl -mpinp 4 -seed Li -max 100 &`
+#### Header 4
 
-- The following command line can be used to stop the spawn-batch script and the running jobs. The `spawn-batch` script detects the STOP file, runs `despawn-batch` and stops itself.
+*   This is an unordered list following a header.
+*   This is an unordered list following a header.
+*   This is an unordered list following a header.
 
-  `touch STOP`
+##### Header 5
 
-### farm-batch
+1.  This is an ordered list following a header.
+2.  This is an ordered list following a header.
+3.  This is an ordered list following a header.
 
-- This script is exactly same as `spawn-batch` script. This script is merely a counterpart to the `farm` script that is included in the EDDP package.
+###### Header 6
+
+| head1        | head two          | three |
+|:-------------|:------------------|:------|
+| ok           | good swedish fish | nice  |
+| out of stock | good and plenty   | nice  |
+| ok           | good `oreos`      | hmm   |
+| ok           | good `zoute` drop | yumm  |
+
+### There's a horizontal rule below this.
+
+* * *
+
+### Here is an unordered list:
+
+*   Item foo
+*   Item bar
+*   Item baz
+*   Item zip
+
+### And an ordered list:
+
+1.  Item one
+1.  Item two
+1.  Item three
+1.  Item four
+
+### And a nested list:
+
+- level 1 item
+  - level 2 item
+  - level 2 item
+    - level 3 item
+    - level 3 item
+- level 1 item
+  - level 2 item
+  - level 2 item
+  - level 2 item
+- level 1 item
+  - level 2 item
+  - level 2 item
+- level 1 item
+
+### Small image
+
+![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
+
+### Large image
+
+![Branching](https://guides.github.com/activities/hello-world/branching.png)
 
 
-## References
-- [Pickard, Ephemeral data derived potentials for random structure search, 2022.](https://doi.org/10.1103/PhysRevB.106.014102)
-- [Salzbrenner et al., Developments and further applications of ephemeral data derived potentials, 2023.](https://doi.org/10.1063/5.0158710)
+### Definition lists can be used with HTML syntax.
+
+<dl>
+<dt>Name</dt>
+<dd>Godzilla</dd>
+<dt>Born</dt>
+<dd>1952</dd>
+<dt>Birthplace</dt>
+<dd>Japan</dd>
+<dt>Color</dt>
+<dd>Green</dd>
+</dl>
+
+```
+Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
+```
+
+```
+The final element.
+```
