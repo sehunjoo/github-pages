@@ -1,2 +1,57 @@
+# Project information
+site_name: ddp-batch
+site_url: https://sehunjoo.github.io/ddp-batch
+site_author: Se Hun Joo
+site_description: >-
+  Documentation for job management with AIRSS and EDDP packages
+
+# Repository
+repo_name: sehunjoo/ddp-batch
+repo_url: https://github.com/sehunjoo/ddp-batch
+
+# Copyright
+copyright: Copyright &copy; 2023 - 2024 Se Hun Joo
+
+# Configuration
 theme:
   name: material
+
+  palette:
+    scheme: default
+   #primary: indigo
+    primary: teal
+
+
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+  icon:
+    logo: material/library
+    repo: fontawesome/brands/github
+
+  favicon: images/favicon.png
+
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - toc.follow
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - search.share
+
+plugins:
+  - search
+
+
+# Page tree
+nav:
+  - Home: index.md
+  - Getting started:
+    - hi: index.md
+  - Examples: index.md
